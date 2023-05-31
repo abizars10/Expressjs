@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-const { log } = require("console");
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
 
 // // Route that executed for GET request and request url path '/' or
 // app.get("/", function (req, res) {
@@ -86,9 +84,6 @@ app.get("/biodata", function (req, res) {
 // Start the server
 app.listen(port);
 console.log("server started at http://localhost:" + port);
-=======
-var express = require("express");
-var app = express();
 
 // // Route that executed for GET request and request url path '/' or
 // app.get("/", function (req, res) {
@@ -121,18 +116,6 @@ app.get("/", function (req, res) {
   res.send("This is a basic example for express.js");
 });
 
-app.get("/api/users", function (req, res) {
-  const user_id = req.query.id;
-  const token = req.query.token;
-  const geo = req.query.geo;
-
-  res.send({
-    user_id: user_id,
-    token: token,
-    geo: geo,
-  });
-});
-
 app.get("/api/:version", function (req, res) {
   res.send(req.params.version);
 });
@@ -150,25 +133,16 @@ app.get("/api/users/:name", function (req, res) {
 // app.listen(port);
 // console.log("server started at http://localhost:" + port);
 
-const port = process.env.PORT || 8080;
+// app.post("/api/users", function (req, res) {
+//   const nama = req.body.nama;
+//   const tempat_lahir = req.body.tempat_lahir;
+//   const tanggal_lahir = req.body.tanggal_lahir;
+//   const alamat = req.body.alamat;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.post("/api/users", function (req, res) {
-  const nama = req.body.nama;
-  const tempat_lahir = req.body.tempat_lahir;
-  const tanggal_lahir = req.body.tanggal_lahir;
-  const alamat = req.body.alamat;
-
-  res.send({
-    nama,
-    tempat_lahir,
-    tanggal_lahir,
-    alamat,
-  });
-});
-// Start the server
-app.listen(port);
-console.log("server started at http://localhost:" + port);
->>>>>>> 19a47611b5cb2ea40896e181db41e2522bd6916a
+//   res.send({
+//     nama,
+//     tempat_lahir,
+//     tanggal_lahir,
+//     alamat,
+//   });
+// });
